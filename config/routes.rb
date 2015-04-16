@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   
   get 'movies' => 'movies#index'
 
+  post 'movies' => 'movies#create'
+  get 'movies/new' => 'movies#new'
+
   get 'movies/:id' => 'movies#detail', as: 'detail'
 
 end
