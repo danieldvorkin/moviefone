@@ -1,2 +1,7 @@
 <h1>MovieFone</h1>
-<p>Welcome, please enjoy illustrating your favourite movies by addid the info and an image url link</p>
+<p>Welcome, please enjoy illustrating your favourite movies by adding the info and an image url link</p>
+
+<% @movies.each do |movie| %>
+	<h1><%= movie.title %> - <%= movie.director %></h1>
+	<img src="<%= movie.url %>">
+<% end %>
