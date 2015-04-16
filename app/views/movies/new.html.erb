@@ -1,16 +1,13 @@
 <h1>Add a movie</h1>
-<%= form_tag "/movies" do %>
+<%= form_for @movies do |m| %>
   <p>
-    <%= label_tag :director %><br>
-    <%= text_field_tag :director %>
+    <%= m.text_field :director, placeholder: "Director Here" %>
   </p>
   <p>
-    <%= label_tag :title %><br>
-    <%= text_field_tag :title %>
+    <%= m.text_field :title, placeholder: "Movie Title" %>
   </p>
   <p>
-    <%= label_tag :url %><br>
-    <%= text_field_tag :url %>
+    <%= m.text_field :url, placeholder: "URL Here" %>
   </p>
   <p>
     <%= submit_tag "Save" %>

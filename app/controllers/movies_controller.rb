@@ -9,11 +9,21 @@ class MoviesController < ApplicationController
 	end
 
 	def new
-		
+		@movies = Movie.new
 	end
 
 	def create
-		render :text => "Saving a movie. URL: #{params[:url]}, Title: #{params[:title]}, Director: #{params[:director]}"
+		@movie = Movie.new(movie_params)
+		if @movie.save
+			redirect_to movies_url
+		else
+			render :new
+		end
+	end
+
+	private
+	def movie_params
+		params.require(:movie).permit(:director, :title, :url)
 	end
 
 end
