@@ -1,7 +1,9 @@
 <h1>MovieFone</h1>
 <p>Welcome, please enjoy illustrating your favourite movies by adding the info and an image url link</p>
 
+<%= link_to "Add Movie", "/movies/new" %>
 <% @movies.each do |movie| %>
 	<h1><%= movie.title %> - <%= movie.director %></h1>
-	<img src="<%= movie.url %>">
+	<%= link_to image_tag(movie.url), "/movies/#{movie.id}" %>
+	<%= link_to "Back to MovieFone", "/movies" %>
 <% end %>
